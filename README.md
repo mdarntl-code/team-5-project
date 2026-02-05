@@ -7,9 +7,8 @@
 ## 🛠 Технології (Tech Stack)
 
 Проєкт реалізовано з використанням наступних інструментів:
-* **Frontend:** React (Vite)
-* **Styling:** Tailwind CSS
-* **Icons:** Lucide React / React Icons
+* **Frontend:** JavaScript
+* **Styling:** CSS
 * **Backend:** Зовнішній API (Sound Wave)
 
 ---
@@ -62,10 +61,16 @@
 
 | Роль | Ім'я | GitHub |
 | :--- | :--- | :--- |
-| **Team Lead** | [Марта Данилюк] | [Профіль](https://github.com/) |
-| **Scrum Master** | [Ім'я] | [Профіль](https://github.com/) |
-| **Developer** | [Ім'я] | [Профіль](https://github.com/) |
-| **Developer** | [Ім'я] | [Профіль](https://github.com/) |
+| **Team Lead** | [Марта Данилюк] | [mdarntl-code](https://github.com/mdarntl-code) |
+| **Scrum Master** | [Бушак Наталія] | [N-Bushak](https://github.com/N-Bushak) |
+| **Developer** | [Юсікова Дарина] | [daryna-yusikova](https://github.com/daryna-yusikova) |
+| **Developer** | [Шевченко Євгеній] | [Yevhenii-Shevchenko](https://github.com/Yevhenii-Shevchenko) |
+| **Developer** | [Музалевський Сергій] | [muzal57](https://github.com/muzal57) |
+| **Developer** | [Дячук Натан] | [d-natan](https://github.com/d-natan) |
+| **Developer** | [Казнадій Дмитро] | [Dima-Kaznadiy](https://github.com/Dima-Kaznadiy) |
+| **Developer** | [Костенко Андрій] | [Andrii2308](https://github.com/Andrii2308) |
+| **Developer** | [Брославец Олена] | [olenaBro](https://github.com/olenaBro) |
+| **Developer** | [Гуменюк Микола] | [GumeniukMykolaMyhailovych](https://github.com/GumeniukMykolaMyhailovych) |
 
 ---
 
