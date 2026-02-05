@@ -5,5 +5,6 @@ import './js/footer.js';
 import './js/header.js';
 import './js/hero.js';
 import './js/modal.js';
-
+import './js/api.js';
+import './js/render-functions.js';
 
