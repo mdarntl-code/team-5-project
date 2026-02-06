@@ -33,3 +33,13 @@ main:has(.back-link) {
   text-align: center;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
