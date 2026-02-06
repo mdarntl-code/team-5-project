@@ -3,9 +3,11 @@
 }
 
 .header-btn {
-  background-color: #060307;
   border: none;
   padding: 0;
+  background: none;
+  width: 48px;
+  height: 48px;
 }
 
 .header-menu {
@@ -39,6 +41,7 @@
   display: flex;
   margin: 6.5px 0 6.5px 0;
   justify-content: space-between;
+  align-items: center;
 }
 
 .header-list {
@@ -50,7 +53,11 @@
 }
 
 .header-section {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: white;
   z-index: 1000;
 }
 
@@ -71,6 +78,11 @@
   color: #ffffff;
 }
 
+.header-logo {
+  display: flex;
+  align-items: center;
+}
+
 .header-menu.is-open {
   display: block;
 }
@@ -81,12 +93,8 @@
   color: #ffffff;
 }
 
-.header-icon-logo {
-  padding: 10.6px 6px 10.6px 6px;
-}
-
 .header-icon-burger {
-  padding: 12px 12px 12px 12px;
+  z-index: 1004;
 }
 
 @media only screen and (min-width: 768px) {
