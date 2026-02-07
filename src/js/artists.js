@@ -1,5 +1,3 @@
-console.log('artists');
-
 import { getArtists } from './api';
 import { showPush } from './pushMessage';
 import { renderArtistCards } from './render-functions';
