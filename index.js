@@ -1,24 +1,83 @@
-import{i as C,a as b}from"./assets/vendor-CK1Rzdhu.js";(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const n of document.querySelectorAll('link[rel="modulepreload"]'))i(n);new MutationObserver(n=>{for(const o of n)if(o.type==="childList")for(const s of o.addedNodes)s.tagName==="LINK"&&s.rel==="modulepreload"&&i(s)}).observe(document,{childList:!0,subtree:!0});function r(n){const o={};return n.integrity&&(o.integrity=n.integrity),n.referrerPolicy&&(o.referrerPolicy=n.referrerPolicy),n.crossOrigin==="use-credentials"?o.credentials="include":n.crossOrigin==="anonymous"?o.credentials="omit":o.credentials="same-origin",o}function i(n){if(n.ep)return;n.ep=!0;const o=r(n);fetch(n.href,o)}})();const k={position:"topRight",timeout:4e3,theme:"dark",backgroundColor:"#060307",progressBarColor:"#4E75FF"},L=(e,t="error")=>{C[t]({...k,title:t==="error"?"Error":"Success",message:e,backgroundColor:t==="error"?"#1a0505":"#060307"})};b.defaults.baseURL="https://sound-wave.b.goit.study/api";async function q(e,t,r={}){var i,n;try{return(await b({method:e,url:t,...r})).data}catch(o){const s=((n=(i=o.response)==null?void 0:i.data)==null?void 0:n.message)||o.message;return L(s),null}}const E=({page:e=1,limit:t})=>q("get","/artists",{params:{page:e,limit:t}}),x=document.querySelector(".artists-list");function A(e){const t=e.map(({_id:r,strArtist:i,strArtistThumb:n,genres:o,strBiographyEN:s})=>{const d=o.map(a=>`<span class="artist-genre">${a}</span>`).join("");return`
+import{i as x,a as w}from"./assets/vendor-CK1Rzdhu.js";(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const s of document.querySelectorAll('link[rel="modulepreload"]'))o(s);new MutationObserver(s=>{for(const i of s)if(i.type==="childList")for(const n of i.addedNodes)n.tagName==="LINK"&&n.rel==="modulepreload"&&o(n)}).observe(document,{childList:!0,subtree:!0});function a(s){const i={};return s.integrity&&(i.integrity=s.integrity),s.referrerPolicy&&(i.referrerPolicy=s.referrerPolicy),s.crossOrigin==="use-credentials"?i.credentials="include":s.crossOrigin==="anonymous"?i.credentials="omit":i.credentials="same-origin",i}function o(s){if(s.ep)return;s.ep=!0;const i=a(s);fetch(s.href,i)}})();const H={position:"topRight",timeout:4e3,theme:"dark",backgroundColor:"#060307",progressBarColor:"#4E75FF"},L=(t,e="error")=>{x[e]({...H,title:e==="error"?"Error":"Success",message:t,backgroundColor:e==="error"?"#1a0505":"#060307"})};w.defaults.baseURL="https://sound-wave.b.goit.study/api";async function $(t,e,a={}){var o,s;try{return(await w({method:t,url:e,...a})).data}catch(i){const n=((s=(o=i.response)==null?void 0:o.data)==null?void 0:s.message)||i.message;return L(n),null}}const I=({page:t=1,limit:e})=>$("get","/artists",{params:{page:t,limit:e}}),Y=t=>$("get",`/artists/${t}`),j=document.querySelector(".artists-list");function S(t){const e=t.map(({_id:a,strArtist:o,strArtistThumb:s,genres:i,strBiographyEN:n})=>{const c=i.map(l=>`<span class="artist-genre">${l}</span>`).join("");return`
           <li class="artist-card">
             <img
-              src="${n}"
-              alt="${i}"
+              src="${s}"
+              alt="${o}"
               class="artist-img"
             />
             <div class="artist-genres">
-              ${d}
+              ${c}
             </div>
-            <h4 class="artist-name">${i}</h4>
+            <h4 class="artist-name">${o}</h4>
             <p class="artist-description">
-              ${s}
+              ${n}
             </p>
             <button
               type="button"
               class="artist-link"
-              data-id="${r}"
+              data-id="${a}"
               >
               Learn more
             </button>
           </li>
-        `}).join("");x.insertAdjacentHTML("beforeend",t)}const c=document.querySelector(".artists-button");let p=1;const S=8;let u=[],h=0;function N(){c.classList.remove("is-hidden")}function I(){c.classList.add("is-hidden")}async function B(){const e=await E({page:p,limit:S});e&&(h=e.totalArtists,A(e.artists),u=[...u,...e.artists],u.length<h?N():I())}B();c.addEventListener("click",H);async function H(e){e.preventDefault(),p+=1,c.disabled=!0,c.classList.add("loading");const t=await E({page:p,limit:S});c.classList.remove("loading"),c.disabled=!1,t&&(A(t.artists),u=[...u,...t.artists],u.length>=h&&(I(),L("You have reached the limit","error")))}console.log("feedbacks");(function(){const e=document.querySelector(".header-btn"),t=document.querySelector(".header-menu");if(!e||!t)return;const r=e.querySelector("use"),i="./img/sprite.svg",n="#icon-exit",o="#icon-menu-burger";let s=null,d=t.parentNode,a=t.nextSibling;function f(l){if(!r)return;const m=i+l;r.setAttribute("href",m),r.setAttributeNS("http://www.w3.org/1999/xlink","xlink:href",m)}function w(){s=document.createElement("div"),s.className="header-overlay",Object.assign(s.style,{position:"fixed",top:"0",left:"0",right:"0",bottom:"0",background:"#060307",zIndex:"999",overflow:"auto",display:"none"}),document.body.appendChild(s),t.addEventListener("click",l=>{l.target.closest('a[href^="#"]')&&g()})}function O(){s||w(),s.style.display="block",document.body.style.overflow="hidden",s.appendChild(t),t.classList.add("is-open"),e.setAttribute("aria-expanded","true"),f(n),document.addEventListener("keydown",y)}function g(){!s||s.style.display==="none"||(s.style.display="none",document.body.style.overflow="",d.insertBefore(t,a),t.classList.remove("is-open"),e.setAttribute("aria-expanded","false"),f(o),document.removeEventListener("keydown",y))}function y(l){l.key==="Escape"&&g()}e.addEventListener("click",l=>{l.preventDefault(),e.getAttribute("aria-expanded")==="true"?g():O()})})();const P=16;function $(){const e=document.querySelectorAll(".hero-gallery-track");T(e),j(e),M()}function M(){const e=document.querySelector("[data-scroll-to]");e&&e.addEventListener("click",function(){const t=this.dataset.scrollTo,r=document.getElementById(t);r&&r.scrollIntoView({behavior:"smooth",block:"start"})})}function T(e){e.forEach(t=>{[...t.querySelectorAll(".hero-gallery-img")].forEach(i=>{const n=i.cloneNode(!0);t.appendChild(n)})})}function j(e){e.forEach(t=>{z(t);const r=R(t),i=D(r);let n=0,o=0;function s(){_(t,n),G(t)}function d(){o++,o===i.length&&s()}i.forEach(a=>{const f=a.querySelector("img");F(f)?(n+=v(a),d()):f.addEventListener("load",()=>{setTimeout(()=>{n+=v(a),d()},10)})}),K(t)})}function R(e){return[...e.querySelectorAll(".hero-gallery-img")]}function D(e){return e.slice(0,e.length/2)}function F(e){return e.complete&&e.naturalHeight!==0}function v(e){return e.offsetHeight+P}function _(e,t){const r=t-P;e.style.setProperty("--original-height",`${r}px`)}function z(e){e.style.animationPlayState="paused"}function G(e){e.style.animationPlayState="running"}function K(e){if(!V(e))return;const t=setInterval(()=>{const r=e.style.getPropertyValue("--original-height");r&&(e.style.transform=`translateY(calc(-1 * ${r}))`,clearInterval(t))},50)}function V(e){return e.closest(".hero-gallery-column-right")}document.addEventListener("DOMContentLoaded",$);console.log("modal");document.getElementById("app-loader");console.log("loader");console.log("feedback modal");
+        `}).join("");j.insertAdjacentHTML("beforeend",e)}function D(t){return t.length===0?'<p class="no-data">No tracks found</p>':t.map(e=>`
+    <div class="artistModal-album-item">
+      <h4 class="artistModal-album-name">${e.strAlbum}</h4>
+      <div class="artistModal-track-header">
+        <span>Track</span>
+        <span>Time</span>
+        <span>Link</span>
+      </div>
+      <ul class="artistModal-track-list">
+        ${e.tracks.map(a=>{const o=Math.floor(a.intDuration/1e3),s=Math.floor(o/60),i=String(o%60).padStart(2,"0"),n=a.movie?a.movie.split(" ")[0]:null;return`
+            <li class="artistModal-track-item">
+              <span class="artistModal-track-name">${a.strTrack}</span>
+              <span class="artistModal-track-duration">${s}:${i}</span>
+              <span class="artistModal-track-link">
+                ${n&&n!=="null"?`
+                  <a href="${n}" target="_blank" class="artistModal-yt-link" rel="noopener noreferrer">
+                    <svg class="artistModal-yt-icon" width="24" height="24">
+                      <use href="./img/sprite.svg#icon-Youtube"></use> 
+                    </svg>
+                  </a>`:""}
+              </span>
+            </li>`}).join("")}
+      </ul>
+    </div>`).join("")}function F({artist:t,yearsActive:e,specificInfoMarkup:a,albumsMarkup:o}){const{strArtist:s,strArtistThumb:i,strCountry:n,strBiographyEN:c,genres:l}=t;return`
+    <div class="artistModal-content-wrapper">
+      <h2 class="artistModal-title">${s}</h2>
+      <div class="artistModal-info-wrapper">
+        <div class="artistModal-img-wrapper">
+          <img src="${i}" class="artistModal-img" alt="${s}">
+        </div>
+        <div class="artistModal-info-grid">
+          <div class="artistModal-info-group">
+            <div class="artistModal-info-item">
+              <span class="artistModal-info-label">Years active</span>
+              <p class="artistModal-info-value">${e}</p>
+            </div>     
+            ${a}      
+            <div class="artistModal-info-item">
+              <span class="artistModal-info-label">Country</span>
+              <p class="artistModal-info-value">${n||"Unknown"}</p>
+            </div>
+          </div>
+          <div class="artistModal-desc">
+            <span class="artistModal-info-label">Biography</span>
+            <p>${c||"Biography not available"}</p>
+          </div>
+          <div class="artistModal-genres">
+            ${(l||[]).map(d=>`<span class="artist-genre">${d}</span>`).join("")}
+          </div>
+        </div> 
+      </div>
+      <h2 class="artistModal-albums-title">Albums</h2>
+      <div class="artistModal-albums-section">${o}</div>
+    </div>`}const f=document.querySelector(".artists-button");let b=1;const B=8;let m=[],M=0;function G(){f.classList.remove("is-hidden")}function C(){f.classList.add("is-hidden")}async function R(){const t=await I({page:b,limit:B});t&&(M=t.totalArtists,S(t.artists),m=[...m,...t.artists],m.length<M?G():C())}R();f.addEventListener("click",_);async function _(t){t.preventDefault(),b+=1,f.disabled=!0,f.classList.add("loading");const e=await I({page:b,limit:B});f.classList.remove("loading"),f.disabled=!1,e&&(S(e.artists),m=[...m,...e.artists],m.length>=M&&(C(),L("You have reached the limit","error")))}console.log("feedbacks");(function(){const t=document.querySelector(".header-btn"),e=document.querySelector(".header-menu");if(!t||!e)return;const a=t.querySelector("use"),o="./img/sprite.svg",s="#icon-exit",i="#icon-menu-burger";let n=null,c=e.parentNode,l=e.nextSibling;function d(u){if(!a)return;const v=o+u;a.setAttribute("href",v),a.setAttributeNS("http://www.w3.org/1999/xlink","xlink:href",v)}function g(){n=document.createElement("div"),n.className="header-overlay",Object.assign(n.style,{position:"fixed",top:"0",left:"0",right:"0",bottom:"0",background:"#060307",zIndex:"999",overflow:"auto",display:"none"}),document.body.appendChild(n),e.addEventListener("click",u=>{u.target.closest('a[href^="#"]')&&p()})}function k(){n||g(),n.style.display="block",document.body.style.overflow="hidden",n.appendChild(e),e.classList.add("is-open"),t.setAttribute("aria-expanded","true"),d(s),document.addEventListener("keydown",h)}function p(){!n||n.style.display==="none"||(n.style.display="none",document.body.style.overflow="",c.insertBefore(e,l),e.classList.remove("is-open"),t.setAttribute("aria-expanded","false"),d(i),document.removeEventListener("keydown",h))}function h(u){u.key==="Escape"&&p()}t.addEventListener("click",u=>{u.preventDefault(),t.getAttribute("aria-expanded")==="true"?p():k()})})();const O=16;function K(){const t=document.querySelectorAll(".hero-gallery-track");U(t),V(t),z()}function z(){const t=document.querySelector("[data-scroll-to]");t&&t.addEventListener("click",function(){const e=this.dataset.scrollTo,a=document.getElementById(e);a&&a.scrollIntoView({behavior:"smooth",block:"start"})})}function U(t){t.forEach(e=>{[...e.querySelectorAll(".hero-gallery-img")].forEach(o=>{const s=o.cloneNode(!0);e.appendChild(s)})})}function V(t){t.forEach(e=>{X(e);const a=Z(e),o=J(a);let s=0,i=0;function n(){W(e,s),tt(e)}function c(){i++,i===o.length&&n()}o.forEach(l=>{const d=l.querySelector("img");Q(d)?(s+=E(l),c()):d.addEventListener("load",()=>{setTimeout(()=>{s+=E(l),c()},10)})}),et(e)})}function Z(t){return[...t.querySelectorAll(".hero-gallery-img")]}function J(t){return t.slice(0,t.length/2)}function Q(t){return t.complete&&t.naturalHeight!==0}function E(t){return t.offsetHeight+O}function W(t,e){const a=e-O;t.style.setProperty("--original-height",`${a}px`)}function X(t){t.style.animationPlayState="paused"}function tt(t){t.style.animationPlayState="running"}function et(t){if(!st(t))return;const e=setInterval(()=>{const a=t.style.getPropertyValue("--original-height");a&&(t.style.transform=`translateY(calc(-1 * ${a}))`,clearInterval(e))},50)}function st(t){return t.closest(".hero-gallery-column-right")}document.addEventListener("DOMContentLoaded",K);const r={overlay:document.getElementById("artist-modal-overlay"),closeBtn:document.getElementById("modal-close"),detailsContainer:document.getElementById("artist-details"),loader:document.getElementById("loader"),artistsList:document.querySelector(".artists-list")};var A;(A=r.artistsList)==null||A.addEventListener("click",nt);async function nt(t){const e=t.target.closest(".artist-link");if(!e)return;const a=e.dataset.id;at(a)}async function at(t){P(),lt(),ot(),r.detailsContainer.innerHTML="";try{const e=await Y(t);if(!e)return;const a=e.tracksList||[],o={};a.forEach(function(i){const n=i.strAlbum||"Other Tracks";o[n]||(o[n]={strAlbum:n,tracks:[]}),o[n].tracks.push(i)});const s=Object.values(o);it(e,s)}catch(e){console.error("Помилка при завантаженні даних:",e),L("Error loading artist details")}finally{rt()}}function it(t,e){const{strArtist:a,strArtistThumb:o,intFormedYear:s,intBornYear:i,intDiedYear:n,strCountry:c,strBiographyEN:l,strGender:d,intMembers:g,genres:k}=t;let p="information missing";const h=s||i;h&&(p=`${h} – ${n&&n!=="null"&&n!==""?n:"present"}`);const v=g&&parseInt(g)>1?`<div class="artistModal-info-item">
+         <span class="artistModal-info-label">Members</span>
+         <p class="artistModal-info-value">${g}</p>
+       </div>`:`<div class="artistModal-info-item">
+         <span class="artistModal-info-label">Sex</span>
+         <p class="artistModal-info-value">${d||"Not specified"}</p>
+       </div>`,q=D(e);r.detailsContainer.innerHTML=F({artist:t,yearsActive:p,specificInfoMarkup:v,albumsMarkup:q})}function P(){var t,e;(t=r.overlay)==null||t.classList.toggle("is-hidden"),document.body.style.overflow=(e=r.overlay)!=null&&e.classList.contains("is-hidden")?"":"hidden"}function ot(){var t;(t=r.loader)==null||t.classList.remove("is-hidden")}function rt(){var t;(t=r.loader)==null||t.classList.add("is-hidden")}function y(){P(),ct()}function N(t){t.code==="Escape"&&y()}function T(t){t.target===r.overlay&&y()}function lt(){var t,e;(t=r.closeBtn)==null||t.addEventListener("click",y),(e=r.overlay)==null||e.addEventListener("click",T),window.addEventListener("keyup",N)}function ct(){var t,e;(t=r.closeBtn)==null||t.removeEventListener("click",y),(e=r.overlay)==null||e.removeEventListener("click",T),window.removeEventListener("keyup",N)}document.getElementById("app-loader");console.log("loader");console.log("feedback modal");
 //# sourceMappingURL=index.js.map

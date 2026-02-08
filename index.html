@@ -14,7 +14,7 @@
     <script type="module" crossorigin src="/team-5-project/index.js"></script>
     <link rel="modulepreload" crossorigin href="/team-5-project/assets/vendor-CK1Rzdhu.js">
     <link rel="stylesheet" crossorigin href="/team-5-project/assets/vendor-DnveWo0P.css">
-    <link rel="stylesheet" crossorigin href="/team-5-project/assets/index-BnJCyufN.css">
+    <link rel="stylesheet" crossorigin href="/team-5-project/assets/index-C02IH09W.css">
   </head>
   <body>
     <section>
@@ -337,9 +337,25 @@
     <section>
     <h1>Footer</h1>
 </section>
-    <section>
-    <h1>Modal</h1>
-</section>
+    <div class="artistModal-overlay is-hidden" id="artist-modal-overlay">
+  
+  <div class="artistModal" id="artist-modal">
+
+    <button class="artistModal-close-btn" id="modal-close" aria-label="Close" type="button">
+      <svg class="artistModal-close-icon" width="32" height="32">
+        <use href="/team-5-project/assets/sprite-Cu7vlAtS.svg#icon-exit"></use>
+      </svg>
+    </button>
+
+    <div class="artistModal-content" id="artist-modal-content">
+      
+      <div id="loader" class="loader is-hidden"></div>
+
+      <div class="artistModal-details" id="artist-details"></div>
+
+    </div>
+  </div>
+</div>
     <section>
     <h2>Feedback modal</h2>
 </section>
