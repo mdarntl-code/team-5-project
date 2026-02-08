@@ -8,7 +8,7 @@ console.log('header');
   const useEl = btn.querySelector('use');
   const spriteBase = './img/sprite.svg';
   const ICON_OPEN = '#icon-exit';
-  const ICON_CLOSE = '#icon-burger';
+  const ICON_CLOSE = '#icon-menu-burger';
 
   let overlay = null;
   let originalParent = menu.parentNode;
