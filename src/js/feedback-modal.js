@@ -1,47 +1,59 @@
-
 const openBtn = document.querySelector('[data-feedback-open]');
 const closeBtn = document.querySelector('[data-feedback-close]');
 const backdrop = document.querySelector('[data-feedback-backdrop]');
+const form = document.querySelector('.feedback-form');
+const errorText = document.querySelector('.form-error');
+const ratingBlock = document.querySelector('[data-rating]');
+
+let selectedRating = 5;
+
 
 function openModal() {
   backdrop.classList.remove('is-hidden');
-  document.body.classList.add('no-scroll');
+  document.body.classList.add('modal-open');
+
+  form.reset();
+  selectedRating = 4;
+  highlightStars(selectedRating);
+  errorText.hidden = true;
 }
+
 
 function closeModal() {
   backdrop.classList.add('is-hidden');
-  document.body.classList.remove('no-scroll');
+  document.body.classList.remove('modal-open');
 }
 
-openBtn.addEventListener('click', openModal);
+
+if (openBtn) {
+  openBtn.addEventListener('click', openModal);
+}
+
 closeBtn.addEventListener('click', closeModal);
 
-backdrop.addEventListener('click', event => {
-  if (event.target === backdrop) {
+
+backdrop.addEventListener('click', e => {
+  if (e.target === backdrop) {
     closeModal();
   }
 });
 
-document.addEventListener('keydown', event => {
-  if (event.key === 'Escape' && !backdrop.classList.contains('is-hidden')) {
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && !backdrop.classList.contains('is-hidden')) {
     closeModal();
   }
 });
 
-const form = document.querySelector('.feedback-form');
-const errorText = document.querySelector('.form-error');
 
-const ratingBlock = document.querySelector('[data-rating]');
-
-let selectedRating = 0;
 
 if (ratingBlock) {
-ratingBlock.addEventListener('click', e => {
+  ratingBlock.addEventListener('click', e => {
     if (e.target.tagName !== 'BUTTON') return;
 
     selectedRating = Number(e.target.dataset.value);
     highlightStars(selectedRating);
-});
+  });
 }
 
 function highlightStars(value) {
@@ -49,11 +61,13 @@ function highlightStars(value) {
 
   buttons.forEach(btn => {
     btn.classList.toggle(
-      'active',
-      Number(btn.dataset.value) <= value
+      'is-active',
+            Number(btn.dataset.value) <= value
     );
   });
 }
+
+
 
 form.addEventListener('submit', async e => {
   e.preventDefault();
