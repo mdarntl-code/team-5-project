@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -7,17 +7,14 @@
 
     <link rel="icon" type="image/svg+xml" href="/team-5-project/favicon.svg" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Epilogue:wght@700&family=IBM+Plex+Sans:wght@400;500;600&family=Roboto:wght@700&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@700&family=IBM+Plex+Sans:wght@400;500;600&family=Roboto:wght@700&display=swap" rel="stylesheet">
 
     <script type="module" crossorigin src="/team-5-project/index.js"></script>
-    <link rel="modulepreload" crossorigin href="/team-5-project/assets/vendor-CK1Rzdhu.js">
-    <link rel="stylesheet" crossorigin href="/team-5-project/assets/vendor-DnveWo0P.css">
-    <link rel="stylesheet" crossorigin href="/team-5-project/assets/index-0uLPYWzm.css">
+    <link rel="modulepreload" crossorigin href="/team-5-project/assets/vendor-nO3sPJ2J.js">
+    <link rel="stylesheet" crossorigin href="/team-5-project/assets/vendor-BJw_OZ0_.css">
+    <link rel="stylesheet" crossorigin href="/team-5-project/assets/index-afPJkgeK.css">
   </head>
   <body>
     <section>
@@ -32,11 +29,11 @@
     <div class="header-nav">
       <a href="./index.html" class="header-logo">
         <svg width="106" height="30" class="header-icon-logo">
-          <use href="/team-5-project/assets/sprite-Cu7vlAtS.svg#icon-logo"></use>
+          <use href="/team-5-project/assets/sprite-D9unHibT.svg#icon-logo"></use>
         </svg> </a
       ><button class="header-btn">
         <svg width="24" height="24" class="header-icon-burger">
-          <use href="/team-5-project/assets/sprite-Cu7vlAtS.svg#icon-menu-burger"></use>
+          <use href="/team-5-project/assets/sprite-D9unHibT.svg#icon-menu-burger"></use>
         </svg>
       </button>
       <ul class="header-list">
@@ -47,7 +44,7 @@
           <a href="#about-us" class="header-list-link">About Us</a>
         </li>
         <li class="header-list-item">
-          <a href="#reviews" class="header-list-link">Reviews</a>
+          <a href="#feedback" class="header-list-link">Reviews</a>
         </li>
       </ul>
     </div>
@@ -62,7 +59,7 @@
       <a href="#about-us" class="header-overlay-link">About Us</a>
     </li>
     <li class="header-menu-item">
-      <a href="#reviews" class="header-overlay-link">Reviews</a>
+      <a href="#feedback" class="header-overlay-link">Reviews</a>
     </li>
   </ul>
 </div>
@@ -268,7 +265,7 @@
         Load More
         <div class="icon-arrow-container">
           <svg class="icon-arrow-long" width="14" height="14" aria-hidden="true">
-            <use href="/team-5-project/assets/sprite-Cu7vlAtS.svg#icon-arrow-long"></use>
+            <use href="/team-5-project/assets/sprite-D9unHibT.svg#icon-arrow-long"></use>
           </svg>
         </div>
       </span>
@@ -314,7 +311,7 @@
       <div class="about-content">
 
         <svg class="about-icon">
-          <use href="/team-5-project/assets/sprite-Cu7vlAtS.svg#icon-logo-icon"></use>
+          <use href="/team-5-project/assets/sprite-D9unHibT.svg#icon-logo-icon"></use>
         </svg>
 
         <h2 class="about-title">About ArtistsHub</h2>
@@ -333,41 +330,34 @@
 </section>
 
       <section class="feedback" id="feedback">
-  <h2 class="visually-hidden">Feedbacks our visitors</h2>
+  <h2 class="visually-hidden">Feedbacks</h2>
 
-  <div class="feedback-wrapper">
-    <button
-      class="feedback-btn feedback-btn-prev"
-      aria-label="Previous feedback"
-    >
-      ←
+  <div class="feedback-container">
+    <!-- Prev button -->
+    <button type="button" class="feedback-prev" aria-label="Previous feedback">
+      <svg class="feedback-svg" width="24" height="24">
+        <use href="/team-5-project/assets/sprite-D9unHibT.svg#icon-arrow-left"></use>
+      </svg>
     </button>
 
+    <!-- Swiper -->
     <div class="swiper feedback-swiper">
-      <div class="swiper-wrapper" id="feedbackList"></div>
+      <div class="swiper-wrapper" id="feedbackList">
+        <!-- JS will insert .swiper-slide here -->
+      </div>
     </div>
 
-    <button class="feedback-btn feedback-btn-next" aria-label="Next feedback">
-      →
+    <!-- Next button -->
+    <button type="button" class="feedback-next" aria-label="Next feedback">
+      <svg class="feedback-svg" width="24" height="24">
+        <use href="/team-5-project/assets/sprite-D9unHibT.svg#icon-arrow-left"></use>
+      </svg>
     </button>
   </div>
 
-  <div class="feedback-pagination">
-    <span class="pagination-dot" data-type="start"></span>
-    <span class="pagination-dot" data-type="middle"></span>
-    <span class="pagination-dot" data-type="end"></span>
-  </div>
+  <!-- Pagination dots -->
+  <div class="feedback-pagination"></div>
 </section>
-
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-
-<script src="https://unpkg.com/raty-js@3.1.1/lib/jquery.raty.js"></script>
-
-<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
-<script src="./feedback.js"></script>
-
     </main>
 
     <footer class="footer-section">
@@ -378,14 +368,14 @@
           class="footer-logo footer-logo-mob"
           aria-label="Footer logo mobile"
         >
-          <use href="/team-5-project/assets/sprite-Cu7vlAtS.svg#icon-footer"></use>
+          <use href="/team-5-project/assets/sprite-D9unHibT.svg#icon-footer"></use>
         </svg>
 
         <svg
           class="footer-logo footer-logo-tab"
           aria-label="Footer logo tablet"
         >
-          <use href="/team-5-project/assets/sprite-Cu7vlAtS.svg#icon-logo"></use>
+          <use href="/team-5-project/assets/sprite-D9unHibT.svg#icon-logo"></use>
         </svg>
       </a>
       <ul class="footer-list-link">
@@ -410,7 +400,7 @@
             rel="noopener noreferrer"
           >
             <svg class="footer-social-icon" width="40" height="40">
-              <use href="/team-5-project/assets/sprite-Cu7vlAtS.svg#icon-Instagram"></use>
+              <use href="/team-5-project/assets/sprite-D9unHibT.svg#icon-Instagram"></use>
             </svg>
           </a>
         </li>
@@ -421,7 +411,7 @@
             rel="noopener noreferrer"
           >
             <svg class="footer-social-icon" width="40" height="40">
-              <use href="/team-5-project/assets/sprite-Cu7vlAtS.svg#icon-Facebook"></use>
+              <use href="/team-5-project/assets/sprite-D9unHibT.svg#icon-Facebook"></use>
             </svg>
           </a>
         </li>
@@ -431,7 +421,7 @@
             target="_blank"
             rel="noopener noreferrer"
             ><svg class="footer-social-icon" width="40" height="40">
-              <use href="/team-5-project/assets/sprite-Cu7vlAtS.svg#icon-Youtube"></use>
+              <use href="/team-5-project/assets/sprite-D9unHibT.svg#icon-Youtube"></use>
             </svg>
           </a>
         </li>
@@ -447,7 +437,7 @@
 
     <button class="artistModal-close-btn" id="modal-close" aria-label="Close" type="button">
       <svg class="artistModal-close-icon" width="32" height="32">
-        <use href="/team-5-project/assets/sprite-Cu7vlAtS.svg#icon-exit"></use>
+        <use href="/team-5-project/assets/sprite-D9unHibT.svg#icon-exit"></use>
       </svg>
     </button>
 
