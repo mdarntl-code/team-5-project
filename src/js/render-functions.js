@@ -2,8 +2,8 @@
 // Давайте домовимось: вся генерація HTML-рядків живе тільки там. У файлах логіки (api, main) ми просто викликаємо ці функції.
 // Так ми не заплутаємось у коді і зможемо легко правити верстку, не ламаючи логіку JS."
 
-
-const BASE_URL = import.meta.env.BASE_URL || './';
+// Import sprite.svg with Vite URL handling
+import spriteUrl from '../img/sprite.svg?url';
 
 const artistsList = document.querySelector('.artists-list');
 
@@ -71,7 +71,7 @@ export function createAlbumsMarkup(albums) {
                 ${cleanLink && cleanLink !== "null" ? `
                   <a href="${cleanLink}" target="_blank" class="artistModal-yt-link" rel="noopener noreferrer">
                     <svg class="artistModal-yt-icon" width="24" height="24">
-                      <use href="${BASE_URL}img/sprite.svg#icon-Youtube"></use> 
+                      <use href="${spriteUrl}#icon-Youtube"></use> 
                     </svg>
                   </a>` : ''}
               </span>
