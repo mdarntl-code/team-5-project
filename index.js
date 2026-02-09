@@ -37,7 +37,7 @@ import{i as x,a as w}from"./assets/vendor-CK1Rzdhu.js";(function(){const e=docum
                 ${n&&n!=="null"?`
                   <a href="${n}" target="_blank" class="artistModal-yt-link" rel="noopener noreferrer">
                     <svg class="artistModal-yt-icon" width="24" height="24">
-                      <use href="/img/sprite.svg#icon-Youtube"></use> 
+                      <use href="./img/sprite.svg#icon-Youtube"></use> 
                     </svg>
                   </a>`:""}
               </span>
