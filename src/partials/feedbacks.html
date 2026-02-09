@@ -1,3 +1,29 @@
-<section>
-    <h1>Feedbacks</h1>
+<section class="feedback">
+  <h2 class="visually-hidden">Feedbacks our visitors</h2>
+
+  <div class="container">
+    <div class="feedback-container">
+      <button
+        type="button"
+        class="feedback-prev"
+        aria-label="Previous feedback"
+      >
+        <svg width="24" height="24">
+          <use href="#icon-caret-right"></use>
+        </svg>
+      </button>
+
+      <div class="swiper feedback-swiper">
+        <div class="swiper-wrapper" id="feedbackList"></div>
+      </div>
+
+      <button type="button" class="feedback-next" aria-label="Next feedback">
+        <svg width="24" height="24">
+          <use href="#icon-caret-right"></use>
+        </svg>
+      </button>
+    </div>
+
+    <div class="feedback-pagination"></div>
+  </div>
 </section>

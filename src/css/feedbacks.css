@@ -1,0 +1,132 @@
+/* ===== FEEDBACK SECTION ===== */
+.feedback {
+    padding: 80px 0;
+    background-color: #060307;
+    overflow: visible;
+}
+
+/* visually hidden */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+}
+
+/* ===== INNER WRAPPER ===== */
+.feedback-container {
+    position: relative;
+    max-width: 720px;
+    margin: 0 auto;
+    overflow: visible;
+}
+
+/* ===== SLIDE ===== */
+.feedback-card {
+    text-align: center;
+    padding: 64px 0;
+}
+
+/* ===== STARS ===== */
+.feedback-rating {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-bottom: 24px;
+}
+
+.feedback-rating i {
+    font-size: 20px;
+}
+
+.active-star {
+    color: #9b5cff;
+}
+
+.inactive-star {
+    color: #ffffff;
+    opacity: 0.9;
+}
+
+/* ===== TEXT ===== */
+.feedback-text {
+    font-size: 20px;
+    line-height: 1.5;
+    margin-bottom: 24px;
+}
+
+.feedback-author {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+/* ===== ARROWS ===== */
+.feedback-prev,
+.feedback-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: transparent;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+/* desktop positioning */
+@media (min-width: 768px) {
+    .feedback-prev {
+        left: -64px;
+    }
+
+    .feedback-next {
+        right: -64px;
+    }
+}
+
+/* ===== PAGINATION ===== */
+.feedback-pagination {
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 5;
+}
+
+.swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.4);
+    opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+    background: #ffffff;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 767px) {
+
+    .feedback-prev,
+    .feedback-next {
+        display: none;
+    }
+
+    .feedback-card {
+        padding: 48px 0;
+    }
+
+    .feedback-text {
+        font-size: 18px;
+    }
+}
