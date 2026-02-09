@@ -4,12 +4,12 @@ const loader = document.getElementById('app-loader');
 
 export function showLoader() {
   if (!loader) return;
-  loader.classList.remove('hidden');
+  loader.classList.remove('is-hidden');
 }
 
 export function hideLoader() {
   if (!loader) return;
-  loader.classList.add('hidden');
+  loader.classList.add('is-hidden');
 }
 
 console.log('loader');
