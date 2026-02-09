@@ -82,6 +82,7 @@
 .artist-link {
     display: inline-flex;
     border: none;
+    border-radius: 8px;
     background: none;
     color: #fff;
     font-weight: 500;
