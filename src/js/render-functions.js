@@ -2,8 +2,8 @@
 // Давайте домовимось: вся генерація HTML-рядків живе тільки там. У файлах логіки (api, main) ми просто викликаємо ці функції.
 // Так ми не заплутаємось у коді і зможемо легко правити верстку, не ламаючи логіку JS."
 
-// Import sprite.svg with Vite URL handling
-import spriteUrl from '../img/sprite.svg?url';
+// Resolve sprite URL correctly for both dev and production
+const spriteUrl = new URL('../img/sprite.svg', import.meta.url).href;
 
 const artistsList = document.querySelector('.artists-list');
 
