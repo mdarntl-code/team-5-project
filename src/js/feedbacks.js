@@ -97,3 +97,5 @@ function initFeedbackSwiper() {
 }
 
 document.addEventListener('DOMContentLoaded', loadFeedbackSlider);
+// fix build update
+console.log('Update version');
