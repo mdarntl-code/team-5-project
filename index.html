@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -7,14 +7,17 @@
 
     <link rel="icon" type="image/svg+xml" href="/team-5-project/favicon.svg" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@700&family=IBM+Plex+Sans:wght@400;500;600&family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Epilogue:wght@700&family=IBM+Plex+Sans:wght@400;500;600&family=Roboto:wght@700&display=swap"
+      rel="stylesheet"
+    />
 
     <script type="module" crossorigin src="/team-5-project/index.js"></script>
     <link rel="modulepreload" crossorigin href="/team-5-project/assets/vendor-CK1Rzdhu.js">
     <link rel="stylesheet" crossorigin href="/team-5-project/assets/vendor-DnveWo0P.css">
-    <link rel="stylesheet" crossorigin href="/team-5-project/assets/index-DrLERmbW.css">
+    <link rel="stylesheet" crossorigin href="/team-5-project/assets/index-0uLPYWzm.css">
   </head>
   <body>
     <section>
@@ -329,9 +332,42 @@
   </div>
 </section>
 
-      <section>
-    <h1>Feedbacks</h1>
+      <section class="feedback" id="feedback">
+  <h2 class="visually-hidden">Feedbacks our visitors</h2>
+
+  <div class="feedback-wrapper">
+    <button
+      class="feedback-btn feedback-btn-prev"
+      aria-label="Previous feedback"
+    >
+      ←
+    </button>
+
+    <div class="swiper feedback-swiper">
+      <div class="swiper-wrapper" id="feedbackList"></div>
+    </div>
+
+    <button class="feedback-btn feedback-btn-next" aria-label="Next feedback">
+      →
+    </button>
+  </div>
+
+  <div class="feedback-pagination">
+    <span class="pagination-dot" data-type="start"></span>
+    <span class="pagination-dot" data-type="middle"></span>
+    <span class="pagination-dot" data-type="end"></span>
+  </div>
 </section>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<script src="https://unpkg.com/raty-js@3.1.1/lib/jquery.raty.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<script src="./feedback.js"></script>
+
     </main>
 
     <footer class="footer-section">
