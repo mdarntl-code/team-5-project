@@ -10,6 +10,14 @@ const searchBtn = document.getElementById('searchBtn');
 const sortDropdown = document.getElementById('sortDropdown');
 const genreDropdown = document.getElementById('genreDropdown');
 const genresList = document.getElementById('genresList');
+const openBtn = document.getElementById('openFilter');
+const filterPanel = document.getElementById('filterPanel');
+
+openBtn.addEventListener('click', () => {
+  filterPanel.classList.toggle('active');
+    openBtn.classList.toggle('active');
+
+});
 
 function closeAllDropdowns() {
   document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('open'));
