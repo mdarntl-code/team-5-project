@@ -10,4 +10,3 @@ import './js/render-functions.js';
 import './js/loader.js';
 import './js/feedback-modal.js';
 import './js/filter.js';
-import './js/filterState.js';
