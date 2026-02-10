@@ -1,39 +1,83 @@
-<section class="filter">
-<div class="filter-box">
-    <p>Filters</p>
-    <button id="resetBtn" class="reset-btn">Reset</button> 
-</div>
+<div class="container">
 
-<!-- Search -->
-<div class="search-box">
-    <input type="text" id="searchInput" placeholder="Search">
-    <button id="searchBtn" class="search-btn">
-    </button>
-</div>
+  <!-- Кнопка відкриття -->
+   <h2 class="section-title">Filters</h2>
+  <button id="openFilter" class="filter-open-btn">
+    <span class="artist-text-search">Search and Filters</span> <svg class="filter-arrow">
+        <use href="../img/sprite.svg#icon-arrow-down"></use>
+  </svg>
+  </button>
 
-<!-- Sort Dropdown -->
-<div class="dropdown" id="sortDropdown">
-    <div class="dropdown-header">Sort</div>
-    <ul class="dropdown-list">
+  <!-- Панель фільтра -->
+  <section class="filter" id="filterPanel">
+
+    <!-- Заголовок -->
+    <div class="filter-box">
+      <!-- <button id="resetBtn" class="reset-btn">Reset</button> -->
+    </div>
+
+    <!-- Пошук -->
+    <div class="search-box">
+        <svg class="search-icon">
+    <use href="../img/sprite.svg#icon-arrow-down"></use>
+  </svg>
+      <input
+      class="search-box-input"
+        type="text"
+        id="searchInput"
+        placeholder="Search"
+      />
+    
+    </div>
+
+    <!-- Dropdown Sort -->
+    <div class="dropdown" id="sortDropdown">
+      <div class="dropdown-header">Sort<svg class="dropdown-icon">
+        <use href="../img/sprite.svg#icon-arrow-down"></use>
+  </svg></div>
+
+      <ul class="dropdown-list">
         <li data-sort="default">Default</li>
         <li data-sort="az">A-Z</li>
         <li data-sort="za">Z-A</li>
-    </ul>
+      </ul>
     </div>
 
-<!-- Genres Dropdown -->
-<div class="dropdown" id="genreDropdown">
-    <div class="dropdown-header">Genres</div>
-    <ul class="dropdown-list" id="genresList"></ul>
-</div>
-</section>
+    <!-- Dropdown Genres -->
+    <div class="dropdown" id="genreDropdown">
+      <div class="dropdown-header">Genres<svg class="dropdown-icon">
+        <use href="../img/sprite.svg#icon-arrow-down"></use>
+  </svg></div>
 
-<section id="emptyState" class="empty hidden">
-<div>
-<h3>Silence on the stage...</h3>
-<p>Looks like no artists match your filters.
-<span>Try changing them or hit “Reset Filters” to bring back the beat.</span>
-</p>
-<button id="resetEmpty">Reset filters</button>
+      <ul
+        class="dropdown-list"
+        id="genresList"
+      ></ul>
+    </div>
+
+  </section>
+
 </div>
+
+
+
+<!-- Empty state -->
+<div class="container">
+<section id="emptyState" class="empty hidden">
+  <div>
+    <h3>Silence on the stage...</h3>
+
+    <p>
+      Looks like no artists match your filters.
+      <span>
+        Try changing them or hit “Reset Filters”
+        to bring back the beat.
+      </span>
+    </p>
+
+    <button id="resetEmpty" class="reset-btn">
+      Reset filters
+    </button>
+  </div>
 </section>
+</div>
