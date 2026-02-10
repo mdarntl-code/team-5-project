@@ -1,6 +1,6 @@
 import { getGenres } from './api';
 import { filterState } from './filterState';
-import { loadArtists } from './artist-section';
+import { loadArtists } from './artists';
 
 const resetBtn = document.getElementById('resetBtn');
 const resetEmpty = document.getElementById('resetEmpty');
