@@ -1,0 +1,39 @@
+<section class="filter">
+<div class="filter-box">
+    <p>Filters</p>
+    <button id="resetBtn" class="reset-btn">Reset</button> 
+</div>
+
+<!-- Search -->
+<div class="search-box">
+    <input type="text" id="searchInput" placeholder="Search">
+    <button id="searchBtn" class="search-btn">
+    </button>
+</div>
+
+<!-- Sort Dropdown -->
+<div class="dropdown" id="sortDropdown">
+    <div class="dropdown-header">Sort</div>
+    <ul class="dropdown-list">
+        <li data-sort="default">Default</li>
+        <li data-sort="az">A-Z</li>
+        <li data-sort="za">Z-A</li>
+    </ul>
+    </div>
+
+<!-- Genres Dropdown -->
+<div class="dropdown" id="genreDropdown">
+    <div class="dropdown-header">Genres</div>
+    <ul class="dropdown-list" id="genresList"></ul>
+</div>
+</section>
+
+<section id="emptyState" class="empty hidden">
+<div>
+<h3>Silence on the stage...</h3>
+<p>Looks like no artists match your filters.
+<span>Try changing them or hit “Reset Filters” to bring back the beat.</span>
+</p>
+<button id="resetEmpty">Reset filters</button>
+</div>
+</section>
