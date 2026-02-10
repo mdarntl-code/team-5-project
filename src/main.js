@@ -9,4 +9,3 @@ import './js/api.js';
 import './js/render-functions.js';
 import './js/loader.js';
 import './js/feedback-modal.js';
-import './js/filter.js';
