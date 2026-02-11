@@ -11,74 +11,71 @@ const LIMIT = 3;
 let swiperInstance = null;
 
 async function loadFeedbackSlider() {
-const response = await getFeedbacks(LIMIT);
+  const response = await getFeedbacks(LIMIT);
 
-  // ❗ масив лежить тут
-const feedbacks = response?.data;
+  const feedbacks = response?.data;
 
-if (!Array.isArray(feedbacks) || feedbacks.length === 0) {
+  if (!Array.isArray(feedbacks) || feedbacks.length === 0) {
     console.warn('[Feedback] feedbacks array is empty or invalid');
     return;
-}
+  }
 
-renderFeedbackSlides(feedbacks);
-initFeedbackSwiper();
+  renderFeedbackSlides(feedbacks);
+  initFeedbackSwiper();
 }
 
 function renderFeedbackSlides(feedbacks) {
-const wrapper = document.getElementById('feedbackList');
-if (!wrapper) return;
+  const wrapper = document.getElementById('feedbackList');
+  if (!wrapper) return;
 
-wrapper.innerHTML = '';
+  wrapper.innerHTML = '';
 
-feedbacks.forEach(({ name, rating, descr }) => {
+  feedbacks.forEach(({ name, rating, descr }) => {
     wrapper.insertAdjacentHTML(
-    'beforeend',
-    `
-    <div class="swiper-slide feedback-card">
+      'beforeend',
+      `
+      <div class="swiper-slide feedback-card">
         <div class="feedback-rating">
-        ${renderStars(rating)}
+          ${renderStars(rating)}
         </div>
         <p class="feedback-text">"${descr}"</p>
         <p class="feedback-author">— ${name}</p>
-    </div>
-    `
+      </div>
+      `
     );
-});
+  });
 }
 
 function renderStars(rating = 0) {
-const rounded = Math.round(rating);
-let stars = '';
+  const rounded = Math.round(rating);
+  let stars = '';
 
-for (let i = 1; i <= 5; i++) {
+  for (let i = 1; i <= 5; i++) {
     stars += `<span class="star ${i <= rounded ? 'active' : ''}">★</span>`;
-}
+  }
 
-return stars;
+  return stars;
 }
 
 function initFeedbackSwiper() {
-if (swiperInstance) {
+  if (swiperInstance) {
     swiperInstance.destroy(true, true);
-}
+  }
 
-swiperInstance = new Swiper('.feedback-swiper', {
+  swiperInstance = new Swiper('.feedback-swiper', {
     modules: [Navigation, Pagination],
     slidesPerView: 1,
     loop: true,
     grabCursor: true,
-
     navigation: {
-    nextEl: '.feedback-next',
-    prevEl: '.feedback-prev',
+      nextEl: '.feedback-next',
+      prevEl: '.feedback-prev',
     },
-
     pagination: {
-    el: '.feedback-pagination',
-    clickable: true,
+      el: '.feedback-pagination',
+      clickable: true,
     },
-});
+  });
 }
 
 document.addEventListener('DOMContentLoaded', loadFeedbackSlider);
