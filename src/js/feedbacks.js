@@ -11,15 +11,9 @@ const LIMIT = 3;
 let swiperInstance = null;
 
 async function loadFeedbackSlider() {
-
   const response = await getFeedbacks(LIMIT);
 
-  // ❗❗❗ ВАЖЛИВО: масив лежить ТУТ
   const feedbacks = response?.data;
-
-  console.log('[Feedback] extracted feedbacks:', feedbacks);
-  console.log('[Feedback] isArray:', Array.isArray(feedbacks));
-  console.log('[Feedback] length:', feedbacks?.length);
 
   if (!Array.isArray(feedbacks) || feedbacks.length === 0) {
     console.warn('[Feedback] feedbacks array is empty or invalid');
@@ -31,18 +25,12 @@ async function loadFeedbackSlider() {
 }
 
 function renderFeedbackSlides(feedbacks) {
-
   const wrapper = document.getElementById('feedbackList');
-
   if (!wrapper) return;
 
   wrapper.innerHTML = '';
 
-  feedbacks.forEach((item, index) => {
-    console.log(`[Feedback] slide ${index}:`, item);
-
-    const { name, rating, descr } = item;
-
+  feedbacks.forEach(({ name, rating, descr }) => {
     wrapper.insertAdjacentHTML(
       'beforeend',
       `
@@ -60,8 +48,6 @@ function renderFeedbackSlides(feedbacks) {
 
 function renderStars(rating = 0) {
   const rounded = Math.round(rating);
-  console.log('[Feedback] renderStars rating:', rating, 'rounded:', rounded);
-
   let stars = '';
 
   for (let i = 1; i <= 5; i++) {
@@ -72,7 +58,6 @@ function renderStars(rating = 0) {
 }
 
 function initFeedbackSwiper() {
-
   if (swiperInstance) {
     swiperInstance.destroy(true, true);
   }
@@ -82,20 +67,15 @@ function initFeedbackSwiper() {
     slidesPerView: 1,
     loop: true,
     grabCursor: true,
-
     navigation: {
       nextEl: '.feedback-next',
       prevEl: '.feedback-prev',
     },
-
     pagination: {
       el: '.feedback-pagination',
       clickable: true,
     },
   });
-
 }
 
 document.addEventListener('DOMContentLoaded', loadFeedbackSlider);
-// fix build update
-console.log('Update version');
