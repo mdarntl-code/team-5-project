@@ -1,65 +1,65 @@
-import{i as q,a as $,S as j,N as F,P as D}from"./assets/vendor-nO3sPJ2J.js";(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const n of document.querySelectorAll('link[rel="modulepreload"]'))i(n);new MutationObserver(n=>{for(const s of n)if(s.type==="childList")for(const r of s.addedNodes)r.tagName==="LINK"&&r.rel==="modulepreload"&&i(r)}).observe(document,{childList:!0,subtree:!0});function a(n){const s={};return n.integrity&&(s.integrity=n.integrity),n.referrerPolicy&&(s.referrerPolicy=n.referrerPolicy),n.crossOrigin==="use-credentials"?s.credentials="include":n.crossOrigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function i(n){if(n.ep)return;n.ep=!0;const s=a(n);fetch(n.href,s)}})();const Y={position:"topRight",timeout:4e3,theme:"dark",backgroundColor:"#060307",progressBarColor:"#4E75FF"},k=(t,e="error")=>{q[e]({...Y,title:e==="error"?"Error":"Success",message:t,backgroundColor:e==="error"?"#1a0505":"#060307"})};$.defaults.baseURL="https://sound-wave.b.goit.study/api";async function E(t,e,a={}){var i,n;try{return(await $({method:t,url:e,...a})).data}catch(s){const r=((n=(i=s.response)==null?void 0:i.data)==null?void 0:n.message)||s.message;return k(r),null}}const S=({page:t=1,limit:e})=>E("get","/artists",{params:{page:t,limit:e}}),R=t=>E("get",`/artists/${t}`),G=t=>E("get","/feedbacks",{params:{limit:t}}),U=new URL("/team-5-project/assets/sprite-D9unHibT.svg",import.meta.url).href,_=document.querySelector(".artists-list");function I(t){const e=t.map(({_id:a,strArtist:i,strArtistThumb:n,genres:s,strBiographyEN:r})=>{const d=s.map(l=>`<span class="artist-genre">${l}</span>`).join("");return`
+import{i as _,a as P,S as K,N as V,P as z}from"./assets/vendor-nO3sPJ2J.js";(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const n of document.querySelectorAll('link[rel="modulepreload"]'))r(n);new MutationObserver(n=>{for(const a of n)if(a.type==="childList")for(const i of a.addedNodes)i.tagName==="LINK"&&i.rel==="modulepreload"&&r(i)}).observe(document,{childList:!0,subtree:!0});function s(n){const a={};return n.integrity&&(a.integrity=n.integrity),n.referrerPolicy&&(a.referrerPolicy=n.referrerPolicy),n.crossOrigin==="use-credentials"?a.credentials="include":n.crossOrigin==="anonymous"?a.credentials="omit":a.credentials="same-origin",a}function r(n){if(n.ep)return;n.ep=!0;const a=s(n);fetch(n.href,a)}})();const Z={position:"topRight",timeout:4e3,theme:"dark",backgroundColor:"#060307",progressBarColor:"#4E75FF"},I=(e,t="error")=>{_[t]({...Z,title:t==="error"?"Error":"Success",message:e,backgroundColor:t==="error"?"#1a0505":"#060307"})};P.defaults.baseURL="https://sound-wave.b.goit.study/api";async function B(e,t,s={}){var r,n;try{return(await P({method:e,url:t,...s})).data}catch(a){const i=((n=(r=a.response)==null?void 0:r.data)==null?void 0:n.message)||a.message;return I(i),null}}const q=({page:e=1,limit:t})=>B("get","/artists",{params:{page:e,limit:t}}),J=e=>B("get",`/artists/${e}`),Q=e=>B("get","/feedbacks",{params:{limit:e}}),W=new URL("/team-5-project/assets/sprite-D9unHibT.svg",import.meta.url).href,X=document.querySelector(".artists-list");function x(e){const t=e.map(({_id:s,strArtist:r,strArtistThumb:n,genres:a,strBiographyEN:i})=>{const d=a.map(l=>`<span class="artist-genre">${l}</span>`).join("");return`
           <li class="artist-card">
             <img
               src="${n}"
-              alt="${i}"
+              alt="${r}"
               class="artist-img"
             />
             <div class="artist-genres">
               ${d}
             </div>
-            <h4 class="artist-name">${i}</h4>
+            <h4 class="artist-name">${r}</h4>
             <p class="artist-description">
-              ${r}
+              ${i}
             </p>
             <button
               type="button"
               class="artist-link"
-              data-id="${a}"
+              data-id="${s}"
               >
               Learn more
             </button>
           </li>
-        `}).join("");_.insertAdjacentHTML("beforeend",e)}function K(t){return t.length===0?'<p class="no-data">No tracks found</p>':t.map(e=>`
+        `}).join("");X.insertAdjacentHTML("beforeend",t)}function ee(e){return e.length===0?'<p class="no-data">No tracks found</p>':e.map(t=>`
     <div class="artistModal-album-item">
-      <h4 class="artistModal-album-name">${e.strAlbum}</h4>
+      <h4 class="artistModal-album-name">${t.strAlbum}</h4>
       <div class="artistModal-track-header">
         <span>Track</span>
         <span>Time</span>
         <span>Link</span>
       </div>
       <ul class="artistModal-track-list">
-        ${e.tracks.map(a=>{const i=Math.floor(a.intDuration/1e3),n=Math.floor(i/60),s=String(i%60).padStart(2,"0"),r=a.movie?a.movie.split(" ")[0]:null;return`
+        ${t.tracks.map(s=>{const r=Math.floor(s.intDuration/1e3),n=Math.floor(r/60),a=String(r%60).padStart(2,"0"),i=s.movie?s.movie.split(" ")[0]:null;return`
             <li class="artistModal-track-item">
-              <span class="artistModal-track-name">${a.strTrack}</span>
-              <span class="artistModal-track-duration">${n}:${s}</span>
+              <span class="artistModal-track-name">${s.strTrack}</span>
+              <span class="artistModal-track-duration">${n}:${a}</span>
               <span class="artistModal-track-link">
-                ${r&&r!=="null"?`
-                  <a href="${r}" target="_blank" class="artistModal-yt-link" rel="noopener noreferrer">
+                ${i&&i!=="null"?`
+                  <a href="${i}" target="_blank" class="artistModal-yt-link" rel="noopener noreferrer">
                     <svg class="artistModal-yt-icon" width="24" height="24">
-                      <use href="${U}#icon-Youtube"></use> 
+                      <use href="${W}#icon-Youtube"></use> 
                     </svg>
                   </a>`:""}
               </span>
             </li>`}).join("")}
       </ul>
-    </div>`).join("")}function V({artist:t,yearsActive:e,specificInfoMarkup:a,albumsMarkup:i}){const{strArtist:n,strArtistThumb:s,strCountry:r,strBiographyEN:d,genres:l}=t;return`
+    </div>`).join("")}function te({artist:e,yearsActive:t,specificInfoMarkup:s,albumsMarkup:r}){const{strArtist:n,strArtistThumb:a,strCountry:i,strBiographyEN:d,genres:l}=e;return`
     <div class="artistModal-content-wrapper">
       <h2 class="artistModal-title">${n}</h2>
       <div class="artistModal-info-wrapper">
         <div class="artistModal-img-wrapper">
-          <img src="${s}" class="artistModal-img" alt="${n}">
+          <img src="${a}" class="artistModal-img" alt="${n}">
         </div>
         <div class="artistModal-info-grid">
           <div class="artistModal-info-group">
             <div class="artistModal-info-item">
               <span class="artistModal-info-label">Years active</span>
-              <p class="artistModal-info-value">${e}</p>
+              <p class="artistModal-info-value">${t}</p>
             </div>     
-            ${a}      
+            ${s}      
             <div class="artistModal-info-item">
               <span class="artistModal-info-label">Country</span>
-              <p class="artistModal-info-value">${r||"Unknown"}</p>
+              <p class="artistModal-info-value">${i||"Unknown"}</p>
             </div>
           </div>
           <div class="artistModal-desc">
@@ -72,20 +72,20 @@ import{i as q,a as $,S as j,N as F,P as D}from"./assets/vendor-nO3sPJ2J.js";(fun
         </div> 
       </div>
       <h2 class="artistModal-albums-title">Albums</h2>
-      <div class="artistModal-albums-section">${i}</div>
-    </div>`}const f=document.querySelector(".artists-button");let M=1;const C=8;let p=[],L=0;function z(){f.classList.remove("is-hidden")}function B(){f.classList.add("is-hidden")}async function Z(){const t=await S({page:M,limit:C});t&&(L=t.totalArtists,I(t.artists),p=[...p,...t.artists],p.length<L?z():B())}Z();f.addEventListener("click",J);async function J(t){t.preventDefault(),M+=1,f.disabled=!0,f.classList.add("loading");const e=await S({page:M,limit:C});f.classList.remove("loading"),f.disabled=!1,e&&(I(e.artists),p=[...p,...e.artists],p.length>=L&&(B(),k("You have reached the limit","error")))}const Q=3;let b=null;async function W(){const t=await G(Q),e=t==null?void 0:t.data;!Array.isArray(e)||e.length===0||(X(e),et())}function X(t){const e=document.getElementById("feedbackList");e&&(e.innerHTML="",t.forEach((a,i)=>{const{name:n,rating:s,descr:r}=a;e.insertAdjacentHTML("beforeend",`
+      <div class="artistModal-albums-section">${r}</div>
+    </div>`}const f=document.querySelector(".artists-button");let S=1;const H=8;let p=[],A=0;function se(){f.classList.remove("is-hidden")}function F(){f.classList.add("is-hidden")}async function ne(){const e=await q({page:S,limit:H});e&&(A=e.totalArtists,x(e.artists),p=[...p,...e.artists],p.length<A?se():F())}ne();f.addEventListener("click",ae);async function ae(e){e.preventDefault(),S+=1,f.disabled=!0,f.classList.add("loading");const t=await q({page:S,limit:H});f.classList.remove("loading"),f.disabled=!1,t&&(x(t.artists),p=[...p,...t.artists],p.length>=A&&(F(),I("You have reached the limit","error")))}const re=3;let w=null;async function ie(){const e=await Q(re),t=e==null?void 0:e.data;if(!Array.isArray(t)||t.length===0){console.warn("[Feedback] feedbacks array is empty or invalid");return}oe(t),ce()}function oe(e){const t=document.getElementById("feedbackList");t&&(t.innerHTML="",e.forEach(({name:s,rating:r,descr:n})=>{t.insertAdjacentHTML("beforeend",`
       <div class="swiper-slide feedback-card">
         <div class="feedback-rating">
-          ${tt(s)}
+          ${le(r)}
         </div>
-        <p class="feedback-text">"${r}"</p>
-        <p class="feedback-author">— ${n}</p>
+        <p class="feedback-text">"${n}"</p>
+        <p class="feedback-author">— ${s}</p>
       </div>
-      `)}))}function tt(t=0){const e=Math.round(t);let a="";for(let i=1;i<=5;i++)a+=`<span class="star ${i<=e?"active":""}">★</span>`;return a}function et(){b&&b.destroy(!0,!0),b=new j(".feedback-swiper",{modules:[F,D],slidesPerView:1,loop:!0,grabCursor:!0,navigation:{nextEl:".feedback-next",prevEl:".feedback-prev"},pagination:{el:".feedback-pagination",clickable:!0}})}document.addEventListener("DOMContentLoaded",W);const st=new URL("/team-5-project/assets/sprite-D9unHibT.svg",import.meta.url).href;(function(){const t=document.querySelector(".header-btn"),e=document.querySelector(".header-menu");if(!t||!e)return;const a=t.querySelector("use"),i="#icon-exit",n="#icon-menu-burger";let s=null,r=e.parentNode,d=e.nextSibling;function l(c){if(!a)return;const v=st+c;a.setAttribute("href",v),a.setAttributeNS("http://www.w3.org/1999/xlink","xlink:href",v)}function u(){s=document.createElement("div"),s.className="header-overlay",Object.assign(s.style,{position:"fixed",top:"0",left:"0",right:"0",bottom:"0",background:"#060307",zIndex:"999",overflow:"auto",display:"none"}),document.body.appendChild(s),e.addEventListener("click",c=>{c.target.closest('a[href^="#"]')&&h()})}function m(){s||u(),s.style.display="block",document.body.style.overflow="hidden",s.appendChild(e),e.classList.add("is-open"),t.setAttribute("aria-expanded","true"),l(i),document.addEventListener("keydown",g)}function h(){!s||s.style.display==="none"||(s.style.display="none",document.body.style.overflow="",r.insertBefore(e,d),e.classList.remove("is-open"),t.setAttribute("aria-expanded","false"),l(n),document.removeEventListener("keydown",g))}function g(c){c.key==="Escape"&&h()}t.addEventListener("click",c=>{c.preventDefault(),t.getAttribute("aria-expanded")==="true"?h():m()})})();const P=16;function nt(){const t=document.querySelectorAll(".hero-gallery-track");it(t),rt(t),at()}function at(){const t=document.querySelector("[data-scroll-to]");t&&t.addEventListener("click",function(){const e=this.dataset.scrollTo,a=document.getElementById(e);a&&a.scrollIntoView({behavior:"smooth",block:"start"})})}function it(t){t.forEach(e=>{[...e.querySelectorAll(".hero-gallery-img")].forEach(i=>{const n=i.cloneNode(!0);e.appendChild(n)})})}function rt(t){t.forEach(e=>{ut(e);const a=ot(e),i=lt(a);let n=0,s=0;function r(){dt(e,n),ft(e)}function d(){s++,s===i.length&&r()}i.forEach(l=>{const u=l.querySelector("img");ct(u)?(n+=w(l),d()):u.addEventListener("load",()=>{setTimeout(()=>{n+=w(l),d()},10)})}),pt(e)})}function ot(t){return[...t.querySelectorAll(".hero-gallery-img")]}function lt(t){return t.slice(0,t.length/2)}function ct(t){return t.complete&&t.naturalHeight!==0}function w(t){return t.offsetHeight+P}function dt(t,e){const a=e-P;t.style.setProperty("--original-height",`${a}px`)}function ut(t){t.style.animationPlayState="paused"}function ft(t){t.style.animationPlayState="running"}function pt(t){if(!mt(t))return;const e=setInterval(()=>{const a=t.style.getPropertyValue("--original-height");a&&(t.style.transform=`translateY(calc(-1 * ${a}))`,clearInterval(e))},50)}function mt(t){return t.closest(".hero-gallery-column-right")}document.addEventListener("DOMContentLoaded",nt);const o={overlay:document.getElementById("artist-modal-overlay"),closeBtn:document.getElementById("modal-close"),detailsContainer:document.getElementById("artist-details"),loader:document.getElementById("loader"),artistsList:document.querySelector(".artists-list")};var A;(A=o.artistsList)==null||A.addEventListener("click",gt);async function gt(t){const e=t.target.closest(".artist-link");if(!e)return;const a=e.dataset.id;ht(a)}async function ht(t){O(),Mt(),yt(),o.detailsContainer.innerHTML="";try{const e=await R(t);if(!e)return;const a=e.tracksList||[],i={};a.forEach(function(s){const r=s.strAlbum||"Other Tracks";i[r]||(i[r]={strAlbum:r,tracks:[]}),i[r].tracks.push(s)});const n=Object.values(i);vt(e,n)}catch(e){console.error("Помилка при завантаженні даних:",e),k("Error loading artist details")}finally{bt()}}function vt(t,e){const{strArtist:a,strArtistThumb:i,intFormedYear:n,intBornYear:s,intDiedYear:r,strCountry:d,strBiographyEN:l,strGender:u,intMembers:m,genres:h}=t;let g="information missing";const c=n||s;c&&(g=`${c} – ${r&&r!=="null"&&r!==""?r:"present"}`);const x=m&&parseInt(m)>1?`<div class="artistModal-info-item">
+      `)}))}function le(e=0){const t=Math.round(e);let s="";for(let r=1;r<=5;r++)s+=`<span class="star ${r<=t?"active":""}">★</span>`;return s}function ce(){w&&w.destroy(!0,!0),w=new K(".feedback-swiper",{modules:[V,z],slidesPerView:1,loop:!0,grabCursor:!0,navigation:{nextEl:".feedback-next",prevEl:".feedback-prev"},pagination:{el:".feedback-pagination",clickable:!0}})}document.addEventListener("DOMContentLoaded",ie);const de=new URL("/team-5-project/assets/sprite-D9unHibT.svg",import.meta.url).href;(function(){const e=document.querySelector(".header-btn"),t=document.querySelector(".header-menu");if(!e||!t)return;const s=e.querySelector("use"),r="#icon-exit",n="#icon-menu-burger";let a=null,i=t.parentNode,d=t.nextSibling;function l(c){if(!s)return;const k=de+c;s.setAttribute("href",k),s.setAttributeNS("http://www.w3.org/1999/xlink","xlink:href",k)}function u(){a=document.createElement("div"),a.className="header-overlay",Object.assign(a.style,{position:"fixed",top:"0",left:"0",right:"0",bottom:"0",background:"#060307",zIndex:"999",overflow:"auto",display:"none"}),document.body.appendChild(a),t.addEventListener("click",c=>{c.target.closest('a[href^="#"]')&&b()})}function g(){a||u(),a.style.display="block",document.body.style.overflow="hidden",a.appendChild(t),t.classList.add("is-open"),e.setAttribute("aria-expanded","true"),l(r),document.addEventListener("keydown",h)}function b(){!a||a.style.display==="none"||(a.style.display="none",document.body.style.overflow="",i.insertBefore(t,d),t.classList.remove("is-open"),e.setAttribute("aria-expanded","false"),l(n),document.removeEventListener("keydown",h))}function h(c){c.key==="Escape"&&b()}e.addEventListener("click",c=>{c.preventDefault(),e.getAttribute("aria-expanded")==="true"?b():g()})})();const j=16;function ue(){const e=document.querySelectorAll(".hero-gallery-track");pe(e),me(e),fe()}function fe(){const e=document.querySelector("[data-scroll-to]");e&&e.addEventListener("click",function(){const t=this.dataset.scrollTo,s=document.getElementById(t);s&&s.scrollIntoView({behavior:"smooth",block:"start"})})}function pe(e){e.forEach(t=>{[...t.querySelectorAll(".hero-gallery-img")].forEach(r=>{const n=r.cloneNode(!0);t.appendChild(n)})})}function me(e){e.forEach(t=>{be(t);const s=ge(t),r=he(s);let n=0,a=0;function i(){ye(t,n),ke(t)}function d(){a++,a===r.length&&i()}r.forEach(l=>{const u=l.querySelector("img");ve(u)?(n+=N(l),d()):u.addEventListener("load",()=>{setTimeout(()=>{n+=N(l),d()},10)})}),Le(t)})}function ge(e){return[...e.querySelectorAll(".hero-gallery-img")]}function he(e){return e.slice(0,e.length/2)}function ve(e){return e.complete&&e.naturalHeight!==0}function N(e){return e.offsetHeight+j}function ye(e,t){const s=t-j;e.style.setProperty("--original-height",`${s}px`)}function be(e){e.style.animationPlayState="paused"}function ke(e){e.style.animationPlayState="running"}function Le(e){if(!Me(e))return;const t=setInterval(()=>{const s=e.style.getPropertyValue("--original-height");s&&(e.style.transform=`translateY(calc(-1 * ${s}))`,clearInterval(t))},50)}function Me(e){return e.closest(".hero-gallery-column-right")}document.addEventListener("DOMContentLoaded",ue);const o={overlay:document.getElementById("artist-modal-overlay"),closeBtn:document.getElementById("modal-close"),detailsContainer:document.getElementById("artist-details"),loader:document.getElementById("loader"),artistsList:document.querySelector(".artists-list")};var O;(O=o.artistsList)==null||O.addEventListener("click",Ee);async function Ee(e){const t=e.target.closest(".artist-link");if(!t)return;const s=t.dataset.id;we(s)}async function we(e){D(),Ie(),Ae(),o.detailsContainer.innerHTML="";try{const t=await J(e);if(!t)return;const s=t.tracksList||[],r={};s.forEach(function(a){const i=a.strAlbum||"Other Tracks";r[i]||(r[i]={strAlbum:i,tracks:[]}),r[i].tracks.push(a)});const n=Object.values(r);Se(t,n)}catch(t){console.error("Помилка при завантаженні даних:",t),I("Error loading artist details")}finally{$e()}}function Se(e,t){const{strArtist:s,strArtistThumb:r,intFormedYear:n,intBornYear:a,intDiedYear:i,strCountry:d,strBiographyEN:l,strGender:u,intMembers:g,genres:b}=e;let h="information missing";const c=n||a;c&&(h=`${c} – ${i&&i!=="null"&&i!==""?i:"present"}`);const U=g&&parseInt(g)>1?`<div class="artistModal-info-item">
          <span class="artistModal-info-label">Members</span>
-         <p class="artistModal-info-value">${m}</p>
+         <p class="artistModal-info-value">${g}</p>
        </div>`:`<div class="artistModal-info-item">
          <span class="artistModal-info-label">Sex</span>
          <p class="artistModal-info-value">${u||"Not specified"}</p>
-       </div>`,H=K(e);o.detailsContainer.innerHTML=V({artist:t,yearsActive:g,specificInfoMarkup:x,albumsMarkup:H})}function O(){var t,e;(t=o.overlay)==null||t.classList.toggle("is-hidden"),document.body.style.overflow=(e=o.overlay)!=null&&e.classList.contains("is-hidden")?"":"hidden"}function yt(){var t;(t=o.loader)==null||t.classList.remove("is-hidden")}function bt(){var t;(t=o.loader)==null||t.classList.add("is-hidden")}function y(){O(),Lt()}function T(t){t.code==="Escape"&&y()}function N(t){t.target===o.overlay&&y()}function Mt(){var t,e;(t=o.closeBtn)==null||t.addEventListener("click",y),(e=o.overlay)==null||e.addEventListener("click",N),window.addEventListener("keydown",T)}function Lt(){var t,e;(t=o.closeBtn)==null||t.removeEventListener("click",y),(e=o.overlay)==null||e.removeEventListener("click",N),window.removeEventListener("keydown",T)}document.getElementById("app-loader");
+       </div>`,G=ee(t);o.detailsContainer.innerHTML=te({artist:e,yearsActive:h,specificInfoMarkup:U,albumsMarkup:G})}function D(){var e,t;(e=o.overlay)==null||e.classList.toggle("is-hidden"),document.body.style.overflow=(t=o.overlay)!=null&&t.classList.contains("is-hidden")?"":"hidden"}function Ae(){var e;(e=o.loader)==null||e.classList.remove("is-hidden")}function $e(){var e;(e=o.loader)==null||e.classList.add("is-hidden")}function M(){D(),Be()}function Y(e){e.code==="Escape"&&M()}function R(e){e.target===o.overlay&&M()}function Ie(){var e,t;(e=o.closeBtn)==null||e.addEventListener("click",M),(t=o.overlay)==null||t.addEventListener("click",R),window.addEventListener("keydown",Y)}function Be(){var e,t;(e=o.closeBtn)==null||e.removeEventListener("click",M),(t=o.overlay)==null||t.removeEventListener("click",R),window.removeEventListener("keydown",Y)}document.getElementById("app-loader");const T=document.querySelector("[data-feedback-open]"),Ce=document.querySelector("[data-feedback-close]"),y=document.querySelector("[data-feedback-backdrop]"),v=document.querySelector(".feedback-form"),L=document.querySelector(".form-error"),$=document.querySelector("[data-rating]");let m=0;function Ne(){y.classList.remove("is-hidden"),document.body.classList.add("modal-open"),v.reset(),m=0,C(m),L.hidden=!0}function E(){var e;y.classList.add("is-hidden"),document.body.classList.remove("modal-open"),(e=document.activeElement)==null||e.blur()}T&&T.addEventListener("click",Ne);Ce.addEventListener("click",E);y.addEventListener("click",e=>{e.target===y&&E()});document.addEventListener("keydown",e=>{e.key==="Escape"&&!y.classList.contains("is-hidden")&&E()});$&&$.addEventListener("click",e=>{e.target.tagName==="BUTTON"&&(m=Number(e.target.dataset.value),C(m))});function C(e){$.querySelectorAll("button").forEach(s=>{s.classList.toggle("is-active",Number(s.dataset.value)<=e)})}function Te({name:e,message:t,rating:s}){return!e||e.length<2||e.length>16?"Name must be between 2 and 16 characters":!t||t.length<10||t.length>512?"Message must be between 10 and 512 characters":!s||s<1||s>5?"Rating must be between 1 and 5":null}v.addEventListener("submit",async e=>{e.preventDefault();const t=v.elements.name.value.trim(),s=v.elements.message.value.trim(),r=m,n=Te({name:t,message:s,rating:r});if(n){L.textContent=n,L.hidden=!1;return}L.hidden=!0;const a={name:t,rating:r,descr:s};try{await postFeedback(a)}finally{v.reset(),m=0,C(0),E()}});
 //# sourceMappingURL=index.js.map

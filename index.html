@@ -14,7 +14,7 @@
     <script type="module" crossorigin src="/team-5-project/index.js"></script>
     <link rel="modulepreload" crossorigin href="/team-5-project/assets/vendor-nO3sPJ2J.js">
     <link rel="stylesheet" crossorigin href="/team-5-project/assets/vendor-BJw_OZ0_.css">
-    <link rel="stylesheet" crossorigin href="/team-5-project/assets/index-CYS_JBzV.css">
+    <link rel="stylesheet" crossorigin href="/team-5-project/assets/index-lql2hFUn.css">
   </head>
   <body>
     <section>
@@ -327,33 +327,41 @@
 </section>
 
       <section class="feedback" id="feedback">
-  <h2 class="visually-hidden">Feedbacks</h2>
+    <div class="container">
+        <h2 class="visually-hidden">Feedbacks</h2>
 
-  <div class="container feedback-container">
-    <!-- Prev button -->
-    <button type="button" class="feedback-prev" aria-label="Previous feedback">
-      <svg class="feedback-svg" width="24" height="24">
-        <use href="/team-5-project/assets/sprite-D9unHibT.svg#icon-arrow-left"></use>
-      </svg>
-    </button>
+        <div class="feedback-container">
+            <!-- Prev button -->
+            <button type="button" class="feedback-prev" aria-label="Previous feedback">
+                <svg class="feedback-svg" width="24" height="24">
+                    <use href="/team-5-project/assets/sprite-D9unHibT.svg#icon-arrow-left"></use>
+                </svg>
+            </button>
 
-    <!-- Swiper -->
-    <div class="swiper feedback-swiper">
-      <div class="swiper-wrapper" id="feedbackList">
-        <!-- JS will insert .swiper-slide here -->
-      </div>
+            <!-- Swiper -->
+            <div class="swiper feedback-swiper">
+                <div class="swiper-wrapper" id="feedbackList">
+                    <!-- JS will insert .swiper-slide here -->
+                </div>
+            </div>
+
+            <!-- Next button -->
+            <button type="button" class="feedback-next" aria-label="Next feedback">
+                <svg class="feedback-svg" width="24" height="24">
+                    <use href="/team-5-project/assets/sprite-D9unHibT.svg#icon-arrow-left"></use>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Pagination dots -->
+        <div class="feedback-pagination"></div>
+
+        <div class="feedback-open-wrapper">
+            <button type="button" class="feedback-open-btn" data-feedback-open>
+                Leave feedback
+            </button>
+        </div>
     </div>
-
-    <!-- Next button -->
-    <button type="button" class="feedback-next" aria-label="Next feedback">
-      <svg class="feedback-svg" width="24" height="24">
-        <use href="/team-5-project/assets/sprite-D9unHibT.svg#icon-arrow-left"></use>
-      </svg>
-    </button>
-  </div>
-
-  <!-- Pagination dots -->
-  <div class="feedback-pagination"></div>
 </section>
     </main>
 
@@ -447,7 +455,51 @@
     </div>
   </div>
 </div>
-    
+    <section class="feedbacks">
+    <div class="container">
+
+
+    </div>
+
+    <div class="backdrop is-hidden" data-feedback-backdrop>
+        <div class="modal">
+            <button class="modal-close" type="button" data-feedback-close aria-label="Close modal">
+                ✕
+            </button>
+
+            <h2 class="modal-title">Submit feedback</h2>
+
+            <form class="feedback-form" novalidate>
+                <label class="form-field">
+                    <span>Name</span>
+                    <input type="text" name="name" placeholder="Your name" required />
+                </label>
+
+                <label class="form-field">
+                    <span>Message</span>
+                    <textarea name="message" placeholder="Your message" required></textarea>
+                </label>
+
+                <div class="form-field">
+                    <span>Rating</span>
+                    <div class="rating" data-rating>
+                        <button type="button" data-value="1">★</button>
+                        <button type="button" data-value="2">★</button>
+                        <button type="button" data-value="3">★</button>
+                        <button type="button" data-value="4">★</button>
+                        <button type="button" data-value="5">★</button>
+                    </div>
+                </div>
+
+                <p class="form-error" hidden>
+                    Please fill all fields
+                </p>
+
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+</section>
     
   </body>
 </html>
