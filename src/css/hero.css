@@ -1,9 +1,8 @@
-/* mobile */
 .hero {
     position: relative;
     isolation: isolate;
     width: 100%;
-    background: radial-gradient(ellipse at center, #2F1B3A 0%, #060307 100%);
+    background: linear-gradient( #2F1B3A 0%, #060307 100%);
     overflow: hidden;
 }
 
@@ -13,10 +12,28 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 20%;
+    height: 10px;
     background: linear-gradient(180deg, transparent 0%, #060307 100%);
     backdrop-filter: blur(0.5px);
     -webkit-backdrop-filter: blur(0.5px);
+    pointer-events: none;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(180deg, 
+        #060307 0%, 
+        #060307 30%,
+        rgba(6, 3, 7, 0.8) 60%,
+        transparent 100%);
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px); 
+    z-index: 1;
     pointer-events: none;
 }
 
@@ -130,11 +147,11 @@
     left: -15px;
     right: -5px;
     z-index: 10;
-    height: 200px;
+    height: 100px;
     background: linear-gradient(180deg,
-            rgb(35, 15, 46) 0%,
-            rgb(32, 12, 42) 25%,
-            rgba(22, 15, 26, 0.5) 70%,
+            rgb(19, 8, 25) 0%,
+            rgb(25, 9, 33) 25%,
+            rgba(22, 15, 26, 0.542) 70%,
             rgba(22, 15, 26, 0) 100%);
     backdrop-filter: blur(0.5px);
     -webkit-backdrop-filter: blur(0.5px);
@@ -296,10 +313,16 @@
         gap: 18px;
     }
 
-    .hero-gallery::after {
-        height: 110px;
-        background: linear-gradient(180deg, transparent 0%, #060307 100%);
-    }
+.hero-gallery::before {
+    background: linear-gradient(180deg,
+            rgb(19, 8, 25) 0%,
+            rgb(33, 13, 43) 25%,
+            rgba(22, 15, 26, 0.542) 70%,
+            rgba(22, 15, 26, 0) 100%);
+    backdrop-filter: blur(0.5px);
+    -webkit-backdrop-filter: blur(0.5px);
+    pointer-events: none;
+}
 
     .hero-gallery-img {
         width: 342.6px;
@@ -370,7 +393,8 @@
         height: calc(100vh + 10px);
         gap: 16px;
         flex-shrink: 0;
-        transform: translateY(-60px);
+        
+        /* transform: translateY(-60px); */
     }
 
     .hero-gallery-img {
@@ -379,17 +403,16 @@
     }
 
     .hero-gallery::before {
-        height: 110px;
+        height: 350px;
         background: linear-gradient(180deg,
                 rgb(2, 1, 2) 0%,
                 rgb(5, 3, 6) 30%,
-                rgba(0, 0, 0, 0.034) 100%);
-        backdrop-filter: blur(0.5px);
-        -webkit-backdrop-filter: blur(0.5px);
+                rgba(0, 0, 0, 0) 100%);
     }
 
-    .hero-gallery::after {
-        bottom: -60px;
+  .hero::after {
+        height: 10px;
+        background: linear-gradient(180deg, transparent 0%, #060307 100%);
     }
 
     .hero-gallery-column-left .hero-gallery-track {
