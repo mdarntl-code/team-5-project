@@ -26,8 +26,8 @@ async function apiRequest(method, url, config = {}) {
 export const getGenres = () => 
   apiRequest('get', '/genres');
 
-export const getArtists = ({ page = 1, limit }) => 
-  apiRequest('get', '/artists', { params: { page, limit } });
+export const getArtists = (params) => 
+  apiRequest('get', '/artists', { params });
 
 export const getArtistById = (id) => 
   apiRequest('get', `/artists/${id}`);

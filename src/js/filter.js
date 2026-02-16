@@ -13,56 +13,67 @@ const genresList = document.getElementById('genresList');
 const openBtn = document.getElementById('openFilter');
 const filterPanel = document.getElementById('filterPanel');
 
+/* ---------- OPEN PANEL ---------- */
+
 openBtn.addEventListener('click', () => {
   filterPanel.classList.toggle('active');
-    openBtn.classList.toggle('active');
-
+  openBtn.classList.toggle('active');
 });
+
+/* ---------- UTILS ---------- */
 
 function closeAllDropdowns() {
   document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('open'));
 }
 
+/* ---------- GENRES ---------- */
+
 async function loadGenres() {
   const genres = await getGenres();
+  if (!genres) return;
+
   genresList.innerHTML = '';
 
   genres.forEach(g => {
     const li = document.createElement('li');
     li.textContent = g.name;
 
-    li.onclick = () => {
+    li.addEventListener('click', () => {
       filterState.genre = g.id;
       closeAllDropdowns();
       loadArtists(true);
-    };
+    });
 
     genresList.appendChild(li);
   });
 }
 
-sortDropdown.querySelector('.dropdown-header').onclick = () => {
+/* ---------- DROPDOWNS ---------- */
+
+sortDropdown.querySelector('.dropdown-header').addEventListener('click', () => {
   closeAllDropdowns();
   sortDropdown.classList.toggle('open');
-};
+});
 
-genreDropdown.querySelector('.dropdown-header').onclick = () => {
+genreDropdown.querySelector('.dropdown-header').addEventListener('click', () => {
   closeAllDropdowns();
   genreDropdown.classList.toggle('open');
-};
+});
 
 sortDropdown.querySelectorAll('li').forEach(li => {
-  li.onclick = () => {
+  li.addEventListener('click', () => {
     filterState.sort = li.dataset.sort;
     closeAllDropdowns();
     loadArtists(true);
-  };
+  });
 });
 
-searchBtn.onclick = () => {
+/* ---------- SEARCH ---------- */
+
+searchBtn?.addEventListener('click', () => {
   filterState.search = searchInput.value.trim();
   loadArtists(true);
-};
+});
 
 searchInput.addEventListener('keydown', e => {
   if (e.key === 'Enter') {
@@ -70,6 +81,8 @@ searchInput.addEventListener('keydown', e => {
     loadArtists(true);
   }
 });
+
+/* ---------- RESET ---------- */
 
 function resetFilters() {
   filterState.search = '';
@@ -81,7 +94,9 @@ function resetFilters() {
   loadArtists(true);
 }
 
-resetBtn.onclick = resetFilters;
-resetEmpty.onclick = resetFilters;
+resetBtn?.addEventListener('click', resetFilters);
+resetEmpty?.addEventListener('click', resetFilters);
+
+/* ---------- INIT ---------- */
 
 loadGenres();
