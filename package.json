@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --open",
-    "build": "vite build --base=/team-5-project/",
+    "build": "vite build --base=/artists-hub/",
     "preview": "vite preview"
   },
   "devDependencies": {
