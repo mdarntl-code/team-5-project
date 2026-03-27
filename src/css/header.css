@@ -40,6 +40,16 @@
   justify-content: space-between;
   align-items: center;
 }
+.header-nav button:hover svg {
+  fill: #ffffff;
+  stroke: none;
+  filter: none;
+}
+.header-nav button:hover {
+  box-shadow: none;
+  filter: none;
+  opacity: 1;
+}
 
 .header-list {
   display: none;
@@ -56,6 +66,10 @@
   width: 100%;
   color: white;
   z-index: 1000;
+}
+
+.header-section .container {
+  padding: 0px 12px 0px 20px;
 }
 
 .header-overlay {
