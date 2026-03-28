@@ -1,0 +1,279 @@
+:root {
+  --white-10: rgba(255, 255, 255, 0.1);
+  --white-60: rgba(255, 255, 255, 0.6);
+}
+
+/* ===================== */
+/* TITLE */
+/* ===================== */
+
+.section-title {
+  font-family: var(--third-family);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 150%;
+  color: var(--color-scheme-1-text);
+  padding-bottom: 2px;
+}
+
+.artist-text-search {
+  padding: 12px;
+}
+
+/* ===================== */
+/* BUTTON */
+/* ===================== */
+
+.filter-open-btn {
+  width: 288px;
+  height: 47px;
+  padding: 10px 24px;
+
+  border-radius: 12px;
+  border: none;
+
+  background: var(--white-10);
+  color: white;
+
+  font-size: 16px;
+  cursor: pointer;
+
+  display: block;
+  margin: 0 auto;
+}
+
+.filter-open-btn:focus-visible {
+  outline: none;
+}
+
+/* Arrow inside button */
+
+.filter-arrow {
+  width: 12px;
+  height: 8px;
+  fill: white;
+  transition: transform 0.3s ease;
+}
+
+.filter-open-btn.active .filter-arrow {
+  transform: rotate(180deg);
+}
+
+/* ===================== */
+/* FILTER PANEL */
+/* ===================== */
+
+.filter {
+  max-width: 290px;
+  margin: 0 auto;
+
+  overflow: visible;
+  max-height: 0;
+  transition: max-height 0.35s ease;
+
+  background: var(--white-10);
+  border-radius: 16px;
+  padding: 0 16px;
+}
+
+.filter.active {
+  max-height: 1000px;
+}
+
+/* ===================== */
+/* FILTER HEADER */
+/* ===================== */
+
+.filter-box {
+  color: white;
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+/* ===================== */
+/* SEARCH */
+/* ===================== */
+
+.search-box {
+  position: relative;
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+
+}
+
+.search-box input {
+  width: 100%;
+  height: 40px;
+
+  padding-left: 40px;
+  padding-right: 12px;
+
+  border-radius: 10px;
+  border:1px solid rgb(255 255 255 / 20%);
+
+  background: transparent;
+
+  border-radius: 12px;
+
+}
+
+.search-box input::placeholder {
+  background: transparent;
+}
+
+.search-box input:focus {
+  outline: none;
+  background: var(--white-10);
+  box-shadow: none;
+}
+
+/* Search icon */
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 18px;
+  height: 18px;
+  fill: white;
+}
+
+.search-btn {
+  width: 40px;
+  border-radius: 10px;
+  border: none;
+  background: transparent;
+
+  cursor: pointer;
+}
+
+/* ===================== */
+/* DROPDOWN */
+/* ===================== */
+
+.dropdown {
+  margin-bottom: 12px;
+  border-radius: 10px;
+  overflow: hidden;
+    border:  1px solid rgb(255 255 255 / 20%)
+
+}
+
+.dropdown-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 12px;
+  color: white;
+  cursor: pointer;
+
+  background: transparent;
+    border-bottom: 1px solid rgb(255 255 255 / 20%)
+
+
+}
+
+/* Arrow */
+
+.dropdown-icon {
+  width: 12px;
+  height: 8px;
+  fill: white;
+  transition: transform 0.3s ease;
+}
+
+.dropdown.open .dropdown-icon {
+  transform: rotate(180deg);
+}
+
+/* List */
+
+.dropdown-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  display: none;
+  background: transparent;
+}
+
+.dropdown.open .dropdown-list {
+  display: block;
+}
+
+.dropdown-list li {
+  padding: 10px 12px;
+  color: white;
+  cursor: pointer;
+}
+
+.dropdown-list li:hover {
+  background: var(--white-10);
+}
+
+
+
+
+.hidden {
+  display: none;
+}
+ 
+.empty {
+  text-align: left;
+  
+  color: white;
+  background-color: #23132B;
+  border-radius: 16px;
+padding: 16px;
+width: 288px;
+}.empty h3 {
+  font-family: var(--second-family);
+
+  font-weight: 700;
+font-size: 32px;
+line-height: 120%;
+letter-spacing: -0.01em;
+padding-bottom: 24px;
+}
+
+.empty p {
+font-family: var(--font-family);
+
+  font-weight: 400;
+font-size: 20px;
+line-height: 150%;
+padding-bottom: 24px;
+}
+
+.empty span {
+  display: block;
+  margin-top: 8px;
+  color: white;
+}
+
+.reset-btn {
+  border-radius: 12px;
+padding: 10px 24px;
+width: 256px;
+height: 47px;
+background-color: #764191;
+color: #ffffff;
+font-weight: 500;
+font-size: 18px;
+line-height: 150%;
+font-family: var(--font-family);
+
+}
+
+.exclamation-mark {
+  width: 40px;
+  height: 40px;
+  fill: white;
+  padding-bottom: 24px;
+}
+
+
